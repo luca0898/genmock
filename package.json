@@ -1,0 +1,15 @@
+{
+  "name": "genmock",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "luca0898 <lucaguiraldello@hotmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "gen": "node src/index"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "fs": "^0.0.1-security",
+    "lorem-ipsum": "^2.0.3"
+  }
+}
