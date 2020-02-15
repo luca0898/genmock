@@ -1,16 +1,15 @@
-const { parseModel } = require("./model");
 const { name } = require("./dataType/name");
 const { guid } = require("./dataType/guid");
 const { longtext } = require("./dataType/longtext");
 const { currency } = require("./dataType/currency");
 const output = require("./output");
-const { createYargsTemplate } = require('./input');
+const { createYargsTemplate, createInputFunction } = require('./input');
 
 const args = createYargsTemplate(require('yargs')).argv;
 
 
 function main() {
-  const model = parseModel(args.model);
+  const model = createInputFunction(args.model)();
 
   let result = [];
 

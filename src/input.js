@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 
 /**
@@ -14,8 +15,7 @@ function createYargsTemplate(yargs) {
   }).option('model', {
     alias: 'm',
     type: 'string',
-    default: 'model.json',
-    coerce: it => path.resolve(it),
+    coerce: it => it ? path.resolve(it) : undefined,
     describe: 'The file to input the data model'
   }).option('output', {
     alias: 'o',
@@ -25,4 +25,14 @@ function createYargsTemplate(yargs) {
   })
 }
 
-module.exports = { createYargsTemplate };
+/**
+ * Creates the function to input data from file or from stdin
+ *
+ * @param {string | undefined} modelFile - The path to the file to input from. Falsy values means stdin
+ * @returns {function(): string}
+ */
+function createInputFunction(modelFile) {
+  return () => JSON.parse(fs.readFileSync(modelFile || 0, 'utf-8'));
+}
+
+module.exports = { createYargsTemplate, createInputFunction };
