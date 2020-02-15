@@ -1,4 +1,4 @@
-const { getModelAndParameters } = require("./model");
+const { parseParams, parseModel } = require("./model");
 const { name } = require("./dataType/name");
 const { guid } = require("./dataType/guid");
 const { longtext } = require("./dataType/longtext");
@@ -6,11 +6,12 @@ const { currency } = require("./dataType/currency");
 const { save } = require("./save");
 
 function main() {
-  const { model, parameters } = getModelAndParameters();
+  const { modelFile, qtd } = parseParams();
+  const model = parseModel(modelFile);
 
   let result = [];
 
-  for (let index = 0; index < parameters.qtd; index++) {
+  for (let index = 0; index < qtd; index++) {
     let propResult = {};
     Object.keys(model).forEach(prop => {
       const { type, count, min, max, prefix } = model[prop];
