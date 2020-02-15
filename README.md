@@ -1,9 +1,7 @@
-<p align="center">
-    <strong style="font-size:32px">genmock</strong>
-</p>
-<p align="center">
-    Simple application made in nodejs for mass generation of data.
-</p>
+genmock
+=======
+
+Simple application made in nodejs for mass generation of data.
 
 ## Goal
 
@@ -11,7 +9,7 @@ His intention is to facilitate when creating a large batch of random data follow
 
 ## Usage
 
-- First you must create a model in json (example in `model.js`). The entity of the items must follow the key pattern and parameters. Currently, only the types **GUID**, **name**, **longtext** and **currency**. However, many other types of data will be introduced to further improve the experience, such as _dates_, _numbers_, _location_, _number of phones_, _list of other children_, etc..
+- First you must create a model in json (example in `model.json`). The entity of the items must follow the key pattern and parameters. Currently, only the types **GUID**, **name**, **longtext** and **currency**. However, many other types of data will be introduced to further improve the experience, such as _dates_, _numbers_, _location_, _number of phones_, _list of other children_, etc..
 
 - Then, run the following command:
 
