@@ -4,5 +4,5 @@ module.exports = function({ min, max, format, options }) {
 
   const result = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 
-  return require("date-fns").format(result, format || "YYYY-MM-DDTHH:mm:ss.SSSZ", options);
+  return require("date-fns").format(result, format, options);
 };
