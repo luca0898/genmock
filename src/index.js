@@ -6,7 +6,7 @@ const { currency } = require("./dataType/currency");
 const { save } = require("./save");
 
 function main() {
-  const { modelFile, qtd } = parseParams();
+  const { modelFile, qtd, outFile } = parseParams();
   const model = parseModel(modelFile);
 
   let result = [];
@@ -28,6 +28,6 @@ function main() {
     });
     result.push(propResult);
   }
-  save(JSON.stringify(result, null, 2));
+  save(JSON.stringify(result, null, 2), outFile);
 }
 main();
