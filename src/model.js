@@ -13,4 +13,4 @@ function parseModel(modelFile) {
   } else throw `File ${modelFile} does not exists`
 }
 
-module.exports = { parseModel, parseParams };
+module.exports = { parseModel };
