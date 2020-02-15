@@ -8,15 +8,34 @@ Simple application made in nodejs for mass generation of data.
 His intention is to facilitate when creating a large batch of random data following a defined model, ensuring that each of the results is different from the others.
 
 ## Usage
+ 
+ ### Input
+ The CLI environment needs a JSON input to be used as model to the generated dataset. This input can be done both via file or stdin.
+ The entity of the items must follow the key pattern and parameters. Currently, only the types **GUID**, **name**, **longtext** and **currency**. However, many other types of data will be introduced to further improve the experience, such as _dates_, _numbers_, _location_, _number of phones_, _list of other children_, etc..
 
-- First you must create a model in json (example in `model.json`). The entity of the items must follow the key pattern and parameters. Currently, only the types **GUID**, **name**, **longtext** and **currency**. However, many other types of data will be introduced to further improve the experience, such as _dates_, _numbers_, _location_, _number of phones_, _list of other children_, etc..
-
-- Then, run the following command:
-
+ E.g.
+```json
+{
+  "id": {
+    "type": "GUID"
+  },
+  "price": {
+    "type": "currency",
+    "prefix": "R$",
+    "min": 750,
+    "max": 1500
+  }
+}
 ```
-    yarn gen {MODEL_PATH} {NUMBER_OF_ITEMS_TO_BE_GENERATED}
-```
-- After that you will have the requested amount of data based on the template provided. Since none of the items will be the same.
+
+ The input file is specified via ``-m`` parameter. E.g. ``npx genmock -m model.json``.
+ If no file is specified, then GenMock will expect the file contents to be inputted via stdin.
+
+ ### Output
+ The output data will be written into stdout if no file is specified. To specify a file its used the ``-o`` param. E.g. ``npx genmock -o output.json``.
+ 
+ ### Additional CLI parameters
+ ``-n, -number``: Specify the amount of data to be generated. E.g.: ``npx genmock -n 10``
 
 ## Follow the Project and Contribute
 If you have any cool ideas for the project, I did not fail to open an issue to discuss.
