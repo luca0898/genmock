@@ -1,16 +1,19 @@
-const { getModelAndParameters } = require("./model");
 const { name } = require("./dataType/name");
 const { guid } = require("./dataType/guid");
 const { longtext } = require("./dataType/longtext");
 const { currency } = require("./dataType/currency");
-const { save } = require("./save");
+const output = require("./output");
+const { createYargsTemplate, createInputFunction } = require('./input');
+
+const args = createYargsTemplate(require('yargs')).argv;
+
 
 function main() {
-  const { model, parameters } = getModelAndParameters();
+  const model = createInputFunction(args.model)();
 
   let result = [];
 
-  for (let index = 0; index < parameters.qtd; index++) {
+  for (let index = 0; index < args.number; index++) {
     let propResult = {};
     Object.keys(model).forEach(prop => {
       const { type, count, min, max, prefix } = model[prop];
@@ -27,6 +30,6 @@ function main() {
     });
     result.push(propResult);
   }
-  save(JSON.stringify(result, null, 2));
+  output(args.output)(JSON.stringify(result, null, 2));
 }
 main();
