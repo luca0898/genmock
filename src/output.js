@@ -6,7 +6,7 @@ const fs = require("fs");
  * @param {string} result - The data to write
  * @param {string} outFile - The file to write into. Default is ``output.json``
  */
-function save(result, outFile = 'output.json') {
+function saveToFile(result, outFile = 'output.json') {
   fs.writeFile(outFile, result, "utf8", function(err) {
     if (err) {
       console.error("An error occurred while writing JSON Object to File.", err);
@@ -14,4 +14,4 @@ function save(result, outFile = 'output.json') {
   });
 }
 
-module.exports = { save };
+module.exports = { save: saveToFile };
