@@ -7,5 +7,6 @@ module.exports = {
   CURRENCY: require('./currency'),
   GUID: require('./guid'),
   LONGTEXT: require('./longtext'),
-  NAME: require('./name')
+  NAME: require('./name'),
+  DATE: require('./date')
 };
