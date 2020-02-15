@@ -12,7 +12,7 @@ function createOutputFunction(outFile) {
   if (outFile) {
     return result => saveToFile(result, outFile)
   } else {
-    return writeToStdout
+    return console.log
   }
 }
 
@@ -30,6 +30,4 @@ function saveToFile(result, outFile = 'output.json') {
   });
 }
 
-const writeToStdout = console.log;
-
-module.exports = { save: saveToFile, createOutputFunction };
+module.exports = createOutputFunction;

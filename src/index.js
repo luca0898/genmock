@@ -3,7 +3,7 @@ const { name } = require("./dataType/name");
 const { guid } = require("./dataType/guid");
 const { longtext } = require("./dataType/longtext");
 const { currency } = require("./dataType/currency");
-const { save } = require("./output");
+const output = require("./output");
 const { createYargsTemplate } = require('./input');
 
 const args = createYargsTemplate(require('yargs')).argv;
@@ -31,6 +31,6 @@ function main() {
     });
     result.push(propResult);
   }
-  save(JSON.stringify(result, null, 2), args.output);
+  output(args.output)(JSON.stringify(result, null, 2));
 }
 main();

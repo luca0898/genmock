@@ -20,8 +20,7 @@ function createYargsTemplate(yargs) {
   }).option('output', {
     alias: 'o',
     type: 'string',
-    default: 'output.json',
-    coerce: it => path.resolve(it),
+    coerce: it => it ? path.resolve(it) : undefined,
     describe: 'The file to write the output'
   })
 }
