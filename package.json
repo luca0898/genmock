@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "colors": "^1.4.0",
+    "date-fns": "^2.9.0",
     "fs": "^0.0.1-security",
     "lorem-ipsum": "^2.0.3"
   }
