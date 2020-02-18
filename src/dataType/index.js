@@ -9,5 +9,6 @@ module.exports = {
   LONGTEXT: require('./longtext'),
   NAME: require('./name'),
   DATE: require('./date'),
-  PHONE: require('./phone')
+  PHONE: require('./phone'),
+  ENUM: require('./enum')
 };
