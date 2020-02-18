@@ -18,8 +18,13 @@ function generate({ model, number = 1 }) {
     let propResult = {};
     Object.keys(model).forEach(prop => {
       const { type } = model[prop];
-      const dataGenerator = dataTypes[Object.keys(dataTypes).find(it => it === type.toUpperCase())];
-      propResult = { ...propResult, [prop]: dataGenerator(model[prop]) };
+      const generator = typeof type === 'function' ? type : dataTypes[String(type).toUpperCase()];
+
+      if (generator) {
+        propResult = { ...propResult, [prop]: generator(model[prop]) };
+      } else {
+        console.warn(`The data generator ${type} could not be found`)
+      }
     });
 
     result.push(propResult);
