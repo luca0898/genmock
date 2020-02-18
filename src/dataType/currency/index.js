@@ -1,4 +1,5 @@
 module.exports = function({ prefix, min, max }) {
   const value = Math.random() * (max - min) + min;
-  return `${prefix} ${parseFloat(value).toFixed(2)}`;
+  prefix = prefix ? `${prefix} ` : "";
+  return prefix + parseFloat(value).toFixed(2);
 };
