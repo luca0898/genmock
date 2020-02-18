@@ -14,8 +14,18 @@
   },
   "price": {
     "type": "currency",
-    "prefix": "R$",
+    "prefix": "",
     "min": 750,
     "max": 1500
+  },
+  "createdAt": {
+    "type": "date",
+    "min": "2020-02-01T00:00:00+0000",
+    "max": "2020-02-18T02:26:49+0000",
+    "format": "yyyy-MM-dd"
+  },
+  "finantialPhone": {
+    "type": "phone",
+    "pattern": "(99) 9 9999-9999"
   }
 }
