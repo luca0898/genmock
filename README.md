@@ -51,14 +51,15 @@ console.log(genmock({ model, number: 3 }));
  The entity of the items must follow the key pattern and parameters. Currently, only the types **GUID**, **name**, **longtext** and **currency**. However, many other types of data will be introduced to further improve the experience, such as _numbers_, _location_, _list of other children_, etc..
 
  Supported Data Types:
- | DataType | Paramters                 |
- |----------|---------------------------|
- | currency | prefix, min, max          |
- | date     | min, max, format, options |
- | guid     | N/A                       |
- | longtext | count                     |
- | name     | count                     |
- | phone    | pattern                   |
+ | DataType | Paramters                               |
+ |----------|-----------------------------------------|
+ | currency | prefix, min, max                        |
+ | date     | min, max, format, options               |
+ | guid     | N/A                                     |
+ | longtext | count                                   |
+ | name     | count                                   |
+ | phone    | pattern                                 |
+ | enum     | items: *[], count: number (default = 1) |
 
  E.g.
 ```json
