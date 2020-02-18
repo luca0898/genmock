@@ -27,5 +27,15 @@
   "finantialPhone": {
     "type": "phone",
     "pattern": "(99) 9 9999-9999"
+  },
+  "itemsToBuy": {
+    "type": "enum",
+    "count": 2,
+    "items": ["RICE", "MEAT", "EGGS", "MILK"]
+  },
+  "newVideoGame": {
+    "type": "enum",
+    "count": 1,
+    "items": ["PC", "XBox", "PS4", "Mobile", "Nintendo Switch", "PSP"]
   }
 }
