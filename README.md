@@ -11,7 +11,17 @@ His intention is to facilitate when creating a large batch of random data follow
  
  ### Input
  The CLI environment needs a JSON input to be used as model to the generated dataset. This input can be done both via file or stdin.
- The entity of the items must follow the key pattern and parameters. Currently, only the types **GUID**, **name**, **longtext** and **currency**. However, many other types of data will be introduced to further improve the experience, such as _dates_, _numbers_, _location_, _number of phones_, _list of other children_, etc..
+ The entity of the items must follow the key pattern and parameters. Currently, only the types **GUID**, **name**, **longtext** and **currency**. However, many other types of data will be introduced to further improve the experience, such as _numbers_, _location_, _list of other children_, etc..
+
+ Supported Data Types:
+ | DataType | Paramters                 |
+ |----------|---------------------------|
+ | currency | prefix, min, max          |
+ | date     | min, max, format, options |
+ | guid     | N/A                       |
+ | longtext | count                     |
+ | name     | count                     |
+ | phone    | pattern                   |
 
  E.g.
 ```json

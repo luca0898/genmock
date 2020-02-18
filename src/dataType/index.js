@@ -8,5 +8,6 @@ module.exports = {
   GUID: require('./guid'),
   LONGTEXT: require('./longtext'),
   NAME: require('./name'),
-  DATE: require('./date')
+  DATE: require('./date'),
+  PHONE: require('./phone')
 };
