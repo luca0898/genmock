@@ -1,6 +1,7 @@
 {
   "name": "genmock",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "author": "luca0898 <lucaguiraldello@hotmail.com>",
   "license": "MIT",
