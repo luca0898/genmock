@@ -1,8 +1,7 @@
 const LoremIpsum = require("lorem-ipsum").LoremIpsum;
 
-function name(options) {
-  const { count } = options;
-  const lorem = new LoremIpsum({ count });
+module.exports = function ({ count }) {
+  const lorem = new LoremIpsum(count);
 
   let firstName = lorem.generateWords(1);
   let lastName = lorem.generateWords(1);
@@ -11,6 +10,4 @@ function name(options) {
   lastName = lastName.charAt(0).toUpperCase() + lastName.slice(1);
 
   return `${firstName} ${lastName}`;
-}
-
-module.exports = { name };
+};
