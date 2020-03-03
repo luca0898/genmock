@@ -11,30 +11,65 @@ His intention is to facilitate when creating a large batch of random data follow
  
  ### Input
  The CLI environment needs a JSON input to be used as model to the generated dataset. This input can be done both via file or stdin.
- The entity of the items must follow the key pattern and parameters. Currently, only the types **GUID**, **name**, **longtext** and **currency**. However, many other types of data will be introduced to further improve the experience, such as _numbers_, _location_, _list of other children_, etc..
+ The entity of the items must follow the key pattern and parameters.
 
  Supported Data Types:
  | DataType | Paramters                               |
  |----------|-----------------------------------------|
+ | bool     | probability (be true in percent)        |
  | currency | prefix, min, max                        |
  | date     | min, max, format, options               |
+ | enum     | items: *[], count: number (default = 1) |
  | guid     | N/A                                     |
  | longtext | count                                   |
+ | mail     | count, separator and sulfix             |
  | name     | count                                   |
  | phone    | pattern                                 |
- | enum     | items: *[], count: number (default = 1) |
 
  E.g.
 ```json
 {
+  "active": {
+    "type": "bool",
+    "probability": 70
+  },
+  "wallet": {
+    "type": "currency",
+    "prefix": "$",
+    "min": 7500,
+    "max": 15000
+  },
+  "createdAt": {
+    "type": "date",
+    "min": "2000-01-01T00:00:00.000Z",
+    "max": "2019-12-31T23:59:59.000Z",
+    "format": "dd/MM/yyyy HH:mm"
+  },
+  "status": {
+    "type": "enum",
+    "count": 1,
+    "items": ["online", "offline"]
+  },
   "id": {
     "type": "GUID"
   },
-  "price": {
-    "type": "currency",
-    "prefix": "R$",
-    "min": 750,
-    "max": 1500
+  "bio": {
+    "type": "longtext",
+    "count": 5
+  },
+  "mail": {
+    "type": "mail",
+    "count": 2,
+    "separator": ["_", ".", ""],
+    "sulfix": ".org.com"
+  },
+  "name": {
+    "type": "name",
+    "count": 2
+  },
+  "phone": {
+    "type": "phone",
+    "pattern": "+99 (99) 9 9999-9999"
   }
 }
 ```
