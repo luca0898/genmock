@@ -10,5 +10,7 @@ module.exports = {
   NAME: require('./name'),
   DATE: require('./date'),
   PHONE: require('./phone'),
-  ENUM: require('./enum')
+  ENUM: require('./enum'),
+  BOOL: require('./bool'),
+  MAIL: require('./mail')
 };

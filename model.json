@@ -1,41 +1,45 @@
 {
-  "id": {
-    "type": "GUID"
+  "active": {
+    "type": "bool",
+    "probability": 70
   },
   "name": {
     "type": "name",
     "count": 2
   },
-  "description": {
-    "type": "longtext",
-    "count": 4,
-    "min": 25,
-    "max": 50
+  "email": {
+    "type": "mail",
+    "count": 2,
+    "separator": ["_", ".", ""],
+    "sulfix": ".com.br"
   },
-  "price": {
-    "type": "currency",
-    "prefix": "",
-    "min": 750,
-    "max": 1500
+  "telphone": {
+    "type": "phone",
+    "pattern": "99 99999-9999"
   },
-  "createdAt": {
+  "acessLevel": {
+    "type": "enum",
+    "count": 1,
+    "items": ["administrator","collaborator"]
+  },
+  "profile": {
+    "type": "enum",
+    "count": 1,
+    "items": ["commercial","shopping"]
+  },
+  "addedBy": {
+    "type": "enum",
+    "count": 1,
+    "items": ["Grupo Mafra"]
+  },
+  "lastAcess": {
     "type": "date",
     "min": "2020-02-01T00:00:00+0000",
     "max": "2020-02-18T02:26:49+0000",
-    "format": "yyyy-MM-dd"
+    "format": "dd/MM/yyyy HH:mm"
   },
-  "finantialPhone": {
+  "expires": {
     "type": "phone",
-    "pattern": "(99) 9 9999-9999"
-  },
-  "itemsToBuy": {
-    "type": "enum",
-    "count": 2,
-    "items": ["RICE", "MEAT", "EGGS", "MILK"]
-  },
-  "newVideoGame": {
-    "type": "enum",
-    "count": 1,
-    "items": ["PC", "XBox", "PS4", "Mobile", "Nintendo Switch", "PSP"]
+    "pattern": "99 dias"
   }
 }
