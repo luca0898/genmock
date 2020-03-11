@@ -51,17 +51,17 @@ console.log(genmock({ model, number: 3 }));
  The entity of the items must follow the key pattern and parameters.
 
  Supported Data Types:
- | DataType | Paramters                               |
- |----------|-----------------------------------------|
- | bool     | probability (be true in percent)        |
- | currency | prefix, min, max                        |
- | date     | min, max, format, options               |
- | enum     | items: *[], count: number (default = 1) |
- | guid     | N/A                                     |
- | longtext | count                                   |
- | mail     | count, separator and sulfix             |
- | name     | count                                   |
- | phone    | pattern                                 |
+ | DataType | Paramters                                  |
+ |----------|--------------------------------------------|
+ | bool     | probability (be true in percent)           |
+ | currency | prefix, min, max                           |
+ | date     | min, max, format, options                  |
+ | enum     | items: *[], count: number (default = 1)    |
+ | guid     | N/A                                        |
+ | longtext | count                                      |
+ | mail     | locale, firstName, lastName and provider   |
+ | name     | locale                                     |
+ | phone    | pattern                                    |
 
  E.g.
 ```json
@@ -96,13 +96,14 @@ console.log(genmock({ model, number: 3 }));
   },
   "mail": {
     "type": "mail",
-    "count": 2,
-    "separator": ["_", ".", ""],
-    "sulfix": ".org.com"
+    "locale": "pt_BR",
+    "firstName": "Luca",
+    "lastName": "Fonseca",
+    "provider": "genmock.com"
   },
   "name": {
     "type": "name",
-    "count": 2
+    "locale": "pt_BR"
   },
   "phone": {
     "type": "phone",
