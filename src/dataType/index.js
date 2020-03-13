@@ -12,5 +12,6 @@ module.exports = {
   PHONE: require('./phone'),
   ENUM: require('./enum'),
   BOOL: require('./bool'),
-  MAIL: require('./mail')
+  MAIL: require('./mail'),
+  INT: require('./integer')
 };

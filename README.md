@@ -58,6 +58,7 @@ console.log(genmock({ model, number: 3 }));
  | date     | min, max, format, options               |
  | enum     | items: *[], count: number (default = 1) |
  | guid     | N/A                                     |
+ | integer  | min, max, fix, fractionDigits           |
  | longtext | count                                   |
  | mail     | count, separator and sulfix             |
  | name     | count                                   |
@@ -89,6 +90,13 @@ console.log(genmock({ model, number: 3 }));
   },
   "id": {
     "type": "GUID"
+  },
+  "age": {
+    "type": "int",
+    "min": 18,
+    "max": 30,
+    "fix": null,
+    "fractionDigits": 0
   },
   "bio": {
     "type": "longtext",
